@@ -1,9 +1,10 @@
 # arduino-roomba
-Control IRobot Roomba using a Blue Tooth Low energy (BLE) mobile device.
+Mobile app to control the IRobot Roomba through Blue Tooth Low energy (BLE).
 
 ### Mobile App Stack:
 - Apache Cordova 4.2.0
 - JQuery Mobile 1.4.5 for the UI 
+- Cordova platform android 3.7.1
 - Evothings BLE API cordova plugin com.evothings.ble 0.0.1 for the Blue Tooth connectivity
 - Arduino 1.0.8
 
