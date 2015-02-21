@@ -1,7 +1,7 @@
 # arduino-roomba
 Mobile app to control the IRobot Roomba through Blue Tooth Low energy (BLE).
 
-![Video] (https://www.youtube.com/watch?v=1BNJXwtzGkQ)
+YT("1BNJXwtzGkQ", print = TRUE)
 
 ### Mobile App Stack:
 - Apache Cordova 4.2.0
