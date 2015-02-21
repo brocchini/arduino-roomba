@@ -14,8 +14,10 @@ Mobile app to control the IRobot Roomba through Blue Tooth Low energy (BLE).
 
 ### Hardware tested:
 - Roomba Scheduler 560 year 2007
+![](https://github.com/brocchini/arduino-roomba/blob/master/images/arduino-roomba_hardware1.jpg)
 - Arduino Uno powered by a 9 volts battery
 - Red Bear Labs BLE Shield 2.1
+ ![](https://github.com/brocchini/arduino-roomba/blob/master/images/arduino-roomba_hardware2.jpg)
 - BLE mobile device Google Nexus 4 with Android Lollipop
 
 ### UI on Nexus 4 Emulator:
