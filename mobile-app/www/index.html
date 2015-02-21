@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="msapplication-tap-highlight" content="no" />
+	<!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. -->
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<title>BroCChini Bot</title>
+
+<!-- Include meta tag to ensure proper rendering and touch zooming -->
+<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+<script src="libs/evothings/evothings.js"></script>
+<script src="libs/evothings/arduinoble/arduinoble.js"></script>
+
+</head>
+<body>
+<div data-role="page" id="pageone">
+	<div data-role="header">
+		<h1>BroCChini Bot</h1>
+	</div>
+
+	<div data-role="main" class="ui-content">
+		<div id="deviceready" class="blink">
+			<p class="event listening">Connecting to Device</p>
+			<p class="event received">Device is Ready</p>
+		</div>
+		<p id="info">Initializing...</p>
+	
+		<div class="ui-grid-a center">
+			<div data-role="content">
+				<div class="ui-grid-b">
+				   <div class="ui-block-a"></div>
+				   <div class="ui-block-b"><button onclick="app.writeToBle(app.drive.forward)" class="ui-btn ui-icon-arrow-u  ui-btn-icon-notext  ui-btn">Forward</button></div>
+				   <div class="ui-block-c"></div>
+				   
+				   <div class="ui-block-a"><button onclick="app.writeToBle(app.drive.left)" class="ui-btn ui-icon-arrow-l ui-btn-icon-notext ui-btn">Left</button></div>
+				   <div class="ui-block-b"><button onclick="app.writeToBle(app.drive.stop)" class="ui-btn ui-icon-delete ui-btn-icon-notext ui-btn">Stop</button></div>
+				   <div class="ui-block-c"><button onclick="app.writeToBle(app.drive.right)" class="ui-btn ui-icon-arrow-r ui-btn-icon-notext ui-btn">Right</button></div>
+				   
+				   <div class="ui-block-a"></div>
+				   <div class="ui-block-b"><button onclick="app.writeToBle(app.drive.backward)" class="ui-btn ui-icon-arrow-d ui-btn-icon-notext">Back</button></div>
+				   <div class="ui-block-c"></div>
+				</div>
+				<button onclick="app.connect()" class="ui-btn ui-btn-icon-left ui-icon-power">Connect to arduinoble</button>
+			</div>
+		</div>
+
+	<div data-role="footer">
+		<h1>Roomba Controller</h1>
+	</div>
+	</div> 
+</div>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/arduino-roomba.js"></script>
+<script>document.addEventListener('deviceready', app.onDeviceReady, false);	</script>
+</body>
+</html>
