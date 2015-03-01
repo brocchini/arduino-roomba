@@ -10,7 +10,7 @@ Mobile app to control the IRobot Roomba through Blue Tooth Low energy (BLE).
 - Evothings BLE API cordova plugin com.evothings.ble 0.0.1 for the Blue Tooth connectivity
 
 ### Arduino App Stack:
-- Arduino 1.0.8
+- Arduino 1.0.6
 - Nordic Bluetooth low energy SDK for Arduino beta version 0.9.0
 - RedBearLab nRF8001 Library version 20140509 
 
