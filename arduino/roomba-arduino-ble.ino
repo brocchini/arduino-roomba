@@ -19,9 +19,12 @@ int ddPin = 7;
 int ledPin = 13;
 byte zeroByte = 0x00;
 
+char sensorsState[10];
+#define bumpRight (sensorsState[0] & 0x01)
+#define bumpLeft  (sensorsState[0] & 0x02)
+
 void setup()
 {
-
   // Writing to an analog input pin sets baseline for later input.
   digitalWrite(INPUT_PIN, HIGH);
 
@@ -67,6 +70,20 @@ void roombaSetup() {
 
 void loop()
 {
+  readSensors();
+   
+  // Reac to sensor state
+  if(bumpLeft) {
+    spinRight();
+    delay(1000);
+    goForward();
+  }
+  else if(bumpRight) {
+    spinLeft();
+    delay(1000);
+    goForward();
+  }
+  
   // If there is a BLE input
   while (ble_available())
   {
@@ -139,21 +156,24 @@ void halt(){
   roomba.write(zeroByte);
 }
 
-void updateSensors() {
-  Serial.print(142, BYTE);
-  Serial.print(1,   BYTE);  // sensor packet 1, 10 bytes
-  delay(100); // wait for sensors 
+void readSensors() {
+  
+  roomba.write(142);
+  roomba.write(1);  // sensor packet 1, 10 bytes
+  delay(100);  
+
   char i = 0;
-  while(Serial.available()) {
-    int c = Serial.read();
+  while(roomba.available()) {
+    int c = roomba.read();
     if( c==-1 ) {
-      for( int i=0; i<5; i ++ ) {   // say we had an error via the LED
-        digitalWrite(ledPin, HIGH); 
+      for( int i=0; i<5; i ++ ) {
         delay(50);
-        digitalWrite(ledPin, LOW);  
+        // TODO : show error via the LED
         delay(50);
       }
     }
-    sensorbytes[i++] = c;
+    
+    sensorsState[i++] = c;
   }    
+
 }
