@@ -138,3 +138,22 @@ void halt(){
   roomba.write(zeroByte);
   roomba.write(zeroByte);
 }
+
+void updateSensors() {
+  Serial.print(142, BYTE);
+  Serial.print(1,   BYTE);  // sensor packet 1, 10 bytes
+  delay(100); // wait for sensors 
+  char i = 0;
+  while(Serial.available()) {
+    int c = Serial.read();
+    if( c==-1 ) {
+      for( int i=0; i<5; i ++ ) {   // say we had an error via the LED
+        digitalWrite(ledPin, HIGH); 
+        delay(50);
+        digitalWrite(ledPin, LOW);  
+        delay(50);
+      }
+    }
+    sensorbytes[i++] = c;
+  }    
+}
