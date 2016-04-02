@@ -1,8 +1,9 @@
 # arduino-roomba
 Mobile app to control the IRobot Roomba through Blue Tooth Low energy (BLE).
+![](https://github.com/brocchini/arduino-roomba/blob/master/images/arduino-roomba_hardware1.jpg)
 
-[Video](http://youtu.be/1BNJXwtzGkQ)
-
+[Video http://youtu.be/1BNJXwtzGkQ](http://youtu.be/1BNJXwtzGkQ)
+ 
 ### Mobile App Stack:
 - Apache Cordova 4.2.0
 - JQuery Mobile 1.4.5 for the UI 
@@ -16,7 +17,6 @@ Mobile app to control the IRobot Roomba through Blue Tooth Low energy (BLE).
 
 ### Hardware tested:
 - Roomba Scheduler 560 year 2007
-![](https://github.com/brocchini/arduino-roomba/blob/master/images/arduino-roomba_hardware1.jpg)
 - Arduino Uno powered by a 9 volts battery
 - Red Bear Labs BLE Shield 2.1
  ![](https://github.com/brocchini/arduino-roomba/blob/master/images/arduino-roomba_hardware2.jpg)
